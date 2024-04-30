@@ -1,3 +1,5 @@
+using COMP003B.Assignment6.Services;
+
 namespace COMP003B.Assignment6
 {
     public class Program
@@ -8,7 +10,9 @@ namespace COMP003B.Assignment6
 
             // Add services to the container.
             builder.Services.AddControllersWithViews();
-
+            builder.Services.AddTransient<MyTransientServices>();
+            builder.Services.AddScoped<MyScopedService>();
+            builder.Services.AddSingleton<MySingletonService>();
 
             var app = builder.Build();
 
